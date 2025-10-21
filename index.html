@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #fff;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    button {
+      margin-top: 30px;
+      background: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ff6b81;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ffe0e6;
+    }
+
+    #message {
+      display: none;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-top: 30px;
+      animation: fadeIn 1s ease forwards;
+      white-space: pre-wrap;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Geluk met jou verjaarsdag my liefie ding.🥺😍🎉</h1>
+  <img src="IMG-20250925-WA0043.jpg" alt="Her Photo">
+  <p>Ek wens jou n dag vol met liefde, en geluk. 💕</p>
+  <button onclick="startTyping()">Click for a surprise 💌</button>
+  <div id="message"></div>
+
+  <audio autoplay loop>
+    <source src="Happy Birthday (feat. John Legend) - Kygo.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Floating hearts
+    const body = document.body;
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.textContent = '💖';
+      heart.style.position = 'fixed';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+      heart.style.animation = 'floatUp 4s linear forwards';
+      body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 400);
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes floatUp {
+        from { transform: translateY(0); opacity: 1; }
+        to { transform: translateY(-100vh); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Typing effect
+    const msg =  msg = `Ek weet ek sê dit baie, maar vandag wil ek dit op 'n ander manier sê... 💻💞
+
+Gelukkige verjaarsdag, my pragtigste veranderlike, my konstante in elke lyn kode van my lewe.
+Jy is die "if" in my hoop, die "while" in my geduld, en die "return true" in my hart.
+Elke keer as ek aan jou dink, voel dit soos 'n perfekte loop wat nooit eindig nie — net liefde wat aanhou uitvoer.
+
+Jy is die een wie se glimlag my logika breek, wie se oë my hele wêreld "re-render".
+Wanneer ek jou sien, vergeet ek van elke fout in my program en elke glitch in my dag.
+Jy is soos 'n perfekte algoritme — eenvoudig, elegant, en doeltreffend in hoe jy my hart vinniger laat klop.
+
+As ek kon kode skryf om te wys hoeveel ek vir jou voel, sou geen rekenaar dit kon verwerk nie.
+Geen databasis sou genoeg spasie hê om al die redes te stoor waarom ek jou liefhet nie.
+Jy’s die API wat my hart elke dag aanroep — sonder limiet, sonder wagtyd, net suiwer liefde.
+
+Jy leer my elke dag wat ware geduld, sagtheid en krag beteken.
+Jy’s die enigste projek wat ek nooit wil voltooi nie, want saam met jou wil ek altyd bly “debug”,
+aanhou verbeter, aanhou groei, aanhou liefhê.
+
+Wanneer ek moeg is, gee jy my energie.
+Wanneer ek onseker is, gee jy my rigting.
+En selfs as my wêreld crash, weet ek jy’s daar om my weer op te bou.
+
+Ek weet vandag is jou spesiale dag, maar eerlik — elke dag wat jy in my lewe is, is 'n geskenk vir my.
+Jy’s die commit wat my hart permanent verander het.
+En as ek ooit 'n README vir my lewe moes skryf, sou die eerste lyn wees:
+"Hier woon 'n man wat sy meisie meer liefhet as wat woorde of kode ooit kan sê." 💕
+
+Ek is so ongelooflik trots op jou — op jou mooi hart, jou drome, jou volharding.
+Ek bid dat hierdie jaar vir jou vrede, geluk en nuwe avonture bring.
+En al is ek dalk nie vandag fisies langs jou nie,
+weet asseblief: my liefde loop konstant in die agtergrond van jou lewe, elke sekonde, elke dag. 🥰
+
+Ek is lief vir jou, nou en altyd — geen einde, geen 'return false', net 'while(true) { love++; }' ❤️
+
+– Jou nerdy dev vir altyd 💻💋`;
+
+    function startTyping() {
+      const messageDiv = document.getElementById('message');
+      messageDiv.style.display = 'block';
+      let i = 0;
+      messageDiv.textContent = '';
+      function type() {
+        if (i < msg.length) {
+          messageDiv.textContent += msg.charAt(i);
+          i++;
+          setTimeout(type, 40);
+        }
+      }
+      type();
+    }
+  </script>
+</body>
+</html>
