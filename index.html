@@ -151,8 +151,8 @@ Ek is lief vir jou, nou en altyd — geen einde, geen 'return false', net 'while
       let i = 0;
       messageDiv.textContent = '';
       function type() {
-        if (i < msg.length) {
-          messageDiv.textContent += msg.charAt(i);
+        if (i <= msg.length) { // ✅ use <= so it includes the final character
+          messageDiv.textContent = msg.slice(0, i); // ✅ safer than += (avoids skipped chars)
           i++;
           setTimeout(type, 40);
         }
