@@ -80,7 +80,7 @@
   <button onclick="startTyping()">Click for a surprise 💌</button>
   <div id="message"></div>
 
-  <audio autoplay loop>
+  <audio id="bgMusic" loop>
     <source src="Happy Birthday (feat. John Legend) - Kygo.mp3" type="audio/mpeg">
   </audio>
 
@@ -108,7 +108,7 @@
     document.head.appendChild(style);
 
     // Typing effect
-    const msg =  msg = `Ek weet ek sê dit baie, maar vandag wil ek dit op 'n ander manier sê... 💻💞
+    const msg = `Ek weet ek sê dit baie, maar vandag wil ek dit op 'n ander manier sê... 💻💞
 
 Gelukkige verjaarsdag, my pragtigste veranderlike, my konstante in elke lyn kode van my lewe.
 Jy is die "if" in my hoop, die "while" in my geduld, en die "return true" in my hart.
@@ -145,6 +145,7 @@ Ek is lief vir jou, nou en altyd — geen einde, geen 'return false', net 'while
 – Jou nerdy dev vir altyd 💻💋`;
 
     function startTyping() {
+      const music = document.getElementById('bgMusic').play();
       const messageDiv = document.getElementById('message');
       messageDiv.style.display = 'block';
       let i = 0;
